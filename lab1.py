@@ -17,33 +17,47 @@ for x in range(56, 101):
 
 def factorial(n):
     a = 1
-    for i in range(1, n+1):
-        a = a*i
-    return a
+    n = float(n)
+    n = int(n)
+    if n < 0:
+        print ("podales liczbe mniejsza od 0, brak silni")
+    elif (n%1!=0):
+        print ("hola")
+    else:
+        for i in range(1, n+1):
+            a = a*i
+        return a
 
-print("Insert a number: ")
-n = int(input())
+print("Insert a integer: ")
+n = (input())
 print('Factorial of ', n, " is ", factorial(n))
 
 #3: write a function which takes an array of numbers as an input and finds the lowest value. Return the index of that element and its value (1p)
-print("Insert 5 numbers to an array:")
-tab = [0, 0, 0, 0, 0]
-for i in range(0, 5):
-    tab[i] = int(input())
+print("Insert a size of an array:")
+s=int(input())
+tab = []
+print("Insert numbers to an array:")
+for i in range(0, s):
+    tab.append(int(input()))
 
 print("Inserted array: ", tab)
 
 def find_lowest_value(tab):
     min = tab[0]
-    amount = 0
+    minIndices = []
+    #amount = 0
     for i in range(0, len(tab)):
         if (tab[i] < min):
             min = tab[i]
+
     print("The lowest value is ", min, "state on position (counting from 0): ")
+
     for i in range(0, len(tab)):
         if (tab[i] == min):
-            amount += 1
-            print(i)
+            minIndices.append(i)
+
+    print(minIndices)
+
 
    # print("\nThere are ", amount, " the same min numbers")
 
